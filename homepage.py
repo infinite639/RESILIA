@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 st.set_page_config(page_title="RESILIA", layout="wide", initial_sidebar_state="collapsed")
-logo_data = b64encode(Path("C:\Users\LENOVO\Downloads\resilia_logo.png").with_name("resilia_logo.png").read_bytes()).decode()
+logo_data = b64encode(Path(__file__).with_name("resilia_logo.png").read_bytes()).decode()
 
 page_html = """
     <style>
