@@ -3,7 +3,7 @@ from base64 import b64encode
 from pathlib import Path
 
 
-st.set_page_config(page_title="RESILIA", layout="narrow", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="RESILIA", layout="wide", initial_sidebar_state="collapsed")
 logo_data = b64encode(Path(__file__).with_name("resilia_logo.png").read_bytes()).decode()
 
 page_html = """
