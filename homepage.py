@@ -24,39 +24,39 @@ st.markdown(
             justify-content: center;
             align-items: center;
             box-sizing: border-box;
-            padding: 6.5rem 1.5rem 12rem;
+            padding: 3.75rem 1.5rem 8rem;
             overflow: hidden;
             color: #161c23;
             font-family: Arial, Helvetica, sans-serif;
         }
         .hero-content {position: relative; z-index: 1; text-align: center;}
-        .brand {display: flex; align-items: center; justify-content: center; gap: 2rem;}
-        .brand svg {width: 130px; height: 160px;}
+        .brand {display: flex; align-items: center; justify-content: center; gap: 1.35rem;}
+        .brand svg {width: 88px; height: 108px; flex: 0 0 auto;}
         .wordmark {
-            font-size: clamp(4rem, 8vw, 7.25rem);
+            font-size: clamp(3.2rem, 6.3vw, 5.5rem);
             letter-spacing: 0.055em;
             font-weight: 800;
             line-height: 1;
         }
-        .accent {width: 84px; height: 5px; background: #d93836; margin: 2.5rem auto 2.7rem;}
+        .accent {width: 68px; height: 4px; background: #d93836; margin: 1.65rem auto 1.85rem;}
         .tagline {
             margin: 0 auto;
-            max-width: 760px;
-            font-size: clamp(1.55rem, 2.5vw, 2.35rem);
+            max-width: 650px;
+            font-size: clamp(1.25rem, 2vw, 1.85rem);
             letter-spacing: .02em;
             line-height: 1.45;
             font-weight: 400;
         }
-        .actions {display: flex; gap: 1.35rem; justify-content: center; margin-top: 3.5rem;}
+        .actions {display: flex; gap: 1rem; justify-content: center; margin-top: 2.35rem;}
         .action {
-            width: 360px;
-            min-height: 96px;
+            width: 285px;
+            min-height: 72px;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 1.1rem;
-            font-size: 1.65rem;
+            font-size: 1.25rem;
             font-weight: 600;
             text-decoration: none;
             transition: transform .2s ease, box-shadow .2s ease;
@@ -65,17 +65,17 @@ st.markdown(
         .action:hover {transform: translateY(-3px); box-shadow: 0 10px 25px rgba(145, 31, 28, .18);}
         .primary {background: #d93836; color: white; border: 1px solid #d93836;}
         .secondary {color: #d93836; border: 1.5px solid #d93836; background: rgba(255,255,255,.25);}
-        .action svg {width: 39px; height: 39px; stroke: currentColor; fill: none; stroke-width: 2.6;}
+        .action svg {width: 31px; height: 31px; stroke: currentColor; fill: none; stroke-width: 2.6;}
         .wave {position: absolute; left: -10%; width: 120%; border-radius: 50% 50% 0 0; pointer-events: none;}
         .wave-one {height: 180px; bottom: -95px; background: #fff0ce; transform: rotate(3deg); opacity: .65;}
         .wave-two {height: 180px; bottom: -125px; background: #fbe8bb; transform: rotate(-4deg); opacity: .58;}
         .wave-three {height: 105px; bottom: -74px; background: #fff8e8; transform: rotate(2deg); opacity: .85;}
         @media (max-width: 800px) {
-            .resilia-home {padding-top: 4rem; padding-bottom: 9rem;}
+            .resilia-home {padding-top: 3rem; padding-bottom: 7rem;}
             .brand {gap: 1rem;}
-            .brand svg {width: 80px; height: 100px;}
+            .brand svg {width: 65px; height: 80px;}
             .actions {flex-direction: column; margin-top: 2.5rem;}
-            .action {width: min(360px, 86vw); min-height: 76px; font-size: 1.3rem;}
+            .action {width: min(285px, 86vw); min-height: 66px; font-size: 1.15rem;}
         }
     </style>
 
@@ -111,3 +111,4 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
