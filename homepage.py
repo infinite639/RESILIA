@@ -1,10 +1,12 @@
 import streamlit as st
+from base64 import b64encode
+from pathlib import Path
 
 
 st.set_page_config(page_title="RESILIA", layout="wide", initial_sidebar_state="collapsed")
+logo_data = b64encode(Path(__file__).with_name("resilia_logo.png").read_bytes()).decode()
 
-st.markdown(
-    """
+page_html = """
     <style>
         #MainMenu, header, footer {visibility: hidden;}
         [data-testid="stAppViewContainer"] {
@@ -31,7 +33,7 @@ st.markdown(
         }
         .hero-content {position: relative; z-index: 1; text-align: center;}
         .brand {display: flex; align-items: center; justify-content: center; gap: 1.35rem;}
-        .brand svg {width: 88px; height: 108px; flex: 0 0 auto;}
+        .brand-logo {width: 88px; height: 108px; object-fit: contain; flex: 0 0 auto;}
         .wordmark {
             font-size: clamp(3.2rem, 6.3vw, 5.5rem);
             letter-spacing: 0.055em;
@@ -73,7 +75,7 @@ st.markdown(
         @media (max-width: 800px) {
             .resilia-home {padding-top: 3rem; padding-bottom: 7rem;}
             .brand {gap: 1rem;}
-            .brand svg {width: 65px; height: 80px;}
+            .brand-logo {width: 65px; height: 80px;}
             .actions {flex-direction: column; margin-top: 2.5rem;}
             .action {width: min(285px, 86vw); min-height: 66px; font-size: 1.15rem;}
         }
@@ -82,13 +84,7 @@ st.markdown(
     <main class="resilia-home">
         <section class="hero-content">
             <div class="brand">
-                <svg viewBox="0 0 130 160" aria-label="RESILIA shield logo">
-                    <path d="M65 7 L118 27 V76 C118 111 96 137 65 153 C34 137 12 111 12 76 V27 Z" fill="#fcfaf6" stroke="#161c23" stroke-width="9" />
-                    <g transform="translate(65 80)" fill="#d93836">
-                        <path d="M-9-34H9l3 10 9 4 9-6 13 13-6 9 4 9 10 3V26l-10 3-4 9 6 9-13 13-9-6-9 4-3 10H-9l-3-10-9-4-9 6-13-13 6-9-4-9-10-3V8l10-3 4-9-6-9 13-13 9 6 9-4z" />
-                        <circle r="14" fill="#fcfaf6" />
-                    </g>
-                </svg>
+                <img class="brand-logo" src="data:image/png;base64,{logo_data}" alt="RESILIA shield logo">
                 <div class="wordmark">RESILIA</div>
             </div>
             <div class="accent"></div>
@@ -108,7 +104,8 @@ st.markdown(
         <div class="wave wave-two"></div>
         <div class="wave wave-three"></div>
     </main>
-    """,
-    unsafe_allow_html=True,
-)
+    """
+
+st.markdown(page_html.replace("{logo_data}", logo_data), unsafe_allow_html=True)
+
 
