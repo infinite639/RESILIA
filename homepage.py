@@ -110,3 +110,4 @@ st.markdown(
     </main>
     """,
     unsafe_allow_html=True,
+)
